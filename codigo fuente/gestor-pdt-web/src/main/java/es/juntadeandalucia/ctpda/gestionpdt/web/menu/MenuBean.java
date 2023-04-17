@@ -126,6 +126,14 @@ public class MenuBean extends BaseBean implements Serializable{
         
 
         /*
+         * 	MENU GONZALO
+         * */    	
+    	DefaultSubMenu submenuFormacionGRS = new DefaultSubMenu();
+    	submenuFormacionGRS.setLabel(mensajesProperties.getString("formacion.grs"));
+    	menuFormacionGRS(submenuFormacionGRS);
+        
+        
+        /*
          * 	SUBMENU MI MESA
          * */    	
     	DefaultSubMenu submenuMiMesa = new DefaultSubMenu();
@@ -161,6 +169,13 @@ public class MenuBean extends BaseBean implements Serializable{
     	DefaultSubMenu submenuAdmon = new DefaultSubMenu();
     	submenuAdmon.setLabel(mensajesProperties.getString("administracion"));
     	menuAdmon(submenuAdmon);
+    	
+        /*
+         * 	MENU FOMRACION BLH
+         * */    	
+    	DefaultSubMenu submenuFormacionBlh = new DefaultSubMenu();
+    	submenuFormacionBlh.setLabel(mensajesProperties.getString("formacion.blh"));
+    	menuFormacionBlh(submenuFormacionBlh);
     	    	
 
     	    	
@@ -487,6 +502,41 @@ public class MenuBean extends BaseBean implements Serializable{
         	
         	submenuExpedientes.getElements().add(itemResoluciones);
         }
+	}
+	
+
+	private void menuFormacionGRS (DefaultSubMenu submenuFormacionGRS) {
+
+		DefaultMenuItem itemGonzalo = new DefaultMenuItem();
+    	itemGonzalo.setAjax(false);
+    	itemGonzalo.setAsync(false);
+    	itemGonzalo.setUpdate(DATAFORM);
+    	itemGonzalo.setValue(mensajesProperties.getString("formacion.grs"));
+    	itemGonzalo.setCommand("#{formacionGRSBean.redireccionMenu}");
+    	
+    	submenuFormacionGRS.getElements().add(itemGonzalo);
+    
+	
+		if(!submenuFormacionGRS.getElements().isEmpty()){
+            model.getElements().add(submenuFormacionGRS);
+		}
+    }
+        
+
+	private void menuFormacionBlh (DefaultSubMenu submenuFormacionBlh) {
+    	DefaultMenuItem itemFormacionBlh = new DefaultMenuItem();
+    	itemFormacionBlh.setAjax(false);
+    	itemFormacionBlh.setAsync(false);
+    	itemFormacionBlh.setUpdate(DATAFORM);
+    	itemFormacionBlh.setValue(mensajesProperties.getString("formacion.blh"));
+    	itemFormacionBlh.setCommand("#{formacionBlhBean.redireccionMenu}");
+    	
+    	submenuFormacionBlh.getElements().add(itemFormacionBlh);
+		
+		if(!submenuFormacionBlh.getElements().isEmpty()) {
+        	model.getElements().add(submenuFormacionBlh);
+        }
+
 	}
 
 
