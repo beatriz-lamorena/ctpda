@@ -339,6 +339,7 @@ public class UtilsComun implements Serializable {
 		plazosExpdteNuevo.setExpediente(expedientesService.obtener(expediente.getId()));
 
 		plazosExpdteNuevo.setValorTipoPlazo(valoresDominioService.obtener(idPlazo));
+		fechaLimite = (fechaLimite != null)?fechaLimite:FechaUtils.sumarDiasAFecha(FechaUtils.hoy(), 365);
 		plazosExpdteNuevo.setFechaLimite(fechaLimite);
 		plazosExpdteNuevo.setCumplido(false);
 		plazosExpdteNuevo.setOrigenInicial(Origenes.A);

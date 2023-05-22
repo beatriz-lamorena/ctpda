@@ -104,8 +104,7 @@
 						<p:outputLabel rendered="#{!editable and (datosExpedientesDatosGeneralesBean.expedientes.getValorTipoExpediente().getCodigo()=='XPC')}" value="#{mensaje['mesa.destino']}" for="responsablesTramitacionExp" />
 						<p:outputLabel rendered="#{editable and (datosExpedientesDatosGeneralesBean.expedientes.getValorTipoExpediente().getCodigo()=='XPC')}" for="responsablesTramitacionExp" value="#{mensaje['mesa.destino']} *" />						
 						<p:selectOneMenu id="responsablesTramitacionExp"
-							disabled="#{not editable or (!datosExpedientesDatosGeneralesBean.permisoRcoEditRespExp and !datosExpedientesDatosGeneralesBean.permisoRceEditRespExp and 
-								!datosExpedientesDatosGeneralesBean.permisoPsanEditRespExp and !datosExpedientesDatosGeneralesBean.permisoXpcEditRespExp)}"
+							disabled="#{not editable}"
 							value="#{datosExpedientesDatosGeneralesBean.selectedNuevoResponsableId}"
 							style="min-width: 150px;">
 							<f:selectItem itemLabel="#{mensaje['seleccione.una.opcion']}" itemValue="" />
