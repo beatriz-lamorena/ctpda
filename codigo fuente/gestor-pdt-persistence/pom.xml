@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>es.juntadeandalucia.ctpda.gestionpdt</groupId>
 			<artifactId>gestor-pdt-persistence-core</artifactId>
-			<version>${parent.version}</version>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>es.juntadeandalucia.ctpda.gestionpdt</groupId>
@@ -63,7 +63,12 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>${log4j2.version}</version>
-		</dependency>	
+		</dependency>
+		<dependency>
+			<groupId>es.juntadeandalucia.ctpda.gestionpdt</groupId>
+			<artifactId>gestor-pdt-docs</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 
 	
